@@ -1,0 +1,426 @@
+[gd_scene format=3 uid="uid://1gcg5xaem8ok"]
+
+[ext_resource type="Script" uid="uid://ccpd2plpa0nlk" path="res://scenes/caculator.gd" id="1_6iwtt"]
+[ext_resource type="Theme" uid="uid://baa4l8sbymjub" path="res://scenes/light_theme.tres" id="1_f5cp6"]
+[ext_resource type="Script" uid="uid://k41paumifyh8" path="res://scenes/panel.gd" id="3_uj8wn"]
+[ext_resource type="Theme" uid="uid://ng7l1vycnvma" path="res://scenes/dark_theme.tres" id="4_dark"]
+
+[node name="Caculator" type="Control" unique_id=316991509]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_f5cp6")
+script = ExtResource("1_6iwtt")
+
+[node name="BG" type="Panel" parent="." unique_id=1992568693]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1536024326]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=2026102020]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Header" unique_id=2026102021]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.34, 0.4, 0.53, 1)
+theme_override_font_sizes/font_size = 20
+text = "CALCULATOR"
+vertical_alignment = 1
+
+[node name="ScientificToggleButton" type="Button" parent="VBoxContainer/Header" unique_id=2026102001]
+layout_mode = 2
+theme_type_variation = &"UtilityButton"
+text = "Scientific · DEG"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/Header" unique_id=2026102024]
+layout_mode = 2
+theme_type_variation = &"UtilityButton"
+text = "Settings"
+
+[node name="DisplayCard" type="PanelContainer" parent="VBoxContainer" unique_id=2026102022]
+custom_minimum_size = Vector2(0, 176)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/DisplayCard" unique_id=1875475214]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ScientificGrid" type="GridContainer" parent="VBoxContainer" unique_id=2026102002]
+visible = false
+layout_mode = 2
+columns = 4
+
+[node name="SinButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102003]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "sin"
+
+[node name="CosButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102004]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "cos"
+
+[node name="TanButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102005]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "tan"
+
+[node name="SqrtButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102006]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "sqrt"
+
+[node name="AsinButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102007]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "asin"
+
+[node name="AcosButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102008]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "acos"
+
+[node name="AtanButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102009]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "atan"
+
+[node name="SquareButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102010]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "x²"
+
+[node name="LnButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102011]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "ln"
+
+[node name="LogButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102012]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "log"
+
+[node name="ReciprocalButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102013]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "1/x"
+
+[node name="PowerButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102014]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "xʸ"
+
+[node name="PiButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102015]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "π"
+
+[node name="EulerButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102016]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "e"
+
+[node name="AngleButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102017]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "DEG/RAD"
+
+[node name="AbsButton" type="Button" parent="VBoxContainer/ScientificGrid" unique_id=2026102018]
+layout_mode = 2
+theme_type_variation = &"ScientificButton"
+text = "abs"
+
+[node name="SettingsPanel" type="PanelContainer" parent="." unique_id=2026102025]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 80.0
+offset_right = -24.0
+offset_bottom = 188.0
+grow_horizontal = 0
+
+[node name="SettingsContent" type="VBoxContainer" parent="SettingsPanel" unique_id=2026102026]
+layout_mode = 2
+
+[node name="SettingsTitle" type="Label" parent="SettingsPanel/SettingsContent" unique_id=2026102027]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Settings"
+
+[node name="DarkModeToggle" type="CheckButton" parent="SettingsPanel/SettingsContent" unique_id=2026102028]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Dark mode"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=833103019]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.0
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PanelContainer" unique_id=656296086]
+layout_mode = 2
+columns = 4
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1347739681]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"UtilityButton"
+text = "C"
+
+[node name="Button2" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=682886349]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"UtilityButton"
+text = "+/-"
+
+[node name="Button3" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1160533068]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"UtilityButton"
+text = "%"
+
+[node name="Button4" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1004324244]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OperatorButton"
+text = "/"
+
+[node name="Button5" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=320649685]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "7"
+
+[node name="Button6" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1930727137]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "8"
+
+[node name="Button7" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1332045635]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "9"
+
+[node name="Button8" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=390791722]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OperatorButton"
+text = "x"
+
+[node name="Button9" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1580093921]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "4"
+
+[node name="Button10" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=325800335]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+
+[node name="Button11" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=876939099]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "6"
+
+[node name="Button12" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=366022243]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OperatorButton"
+text = "-"
+
+[node name="Button13" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=250242945]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1"
+
+[node name="Button14" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1776756391]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "2"
+
+[node name="Button15" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1026374449]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3"
+
+[node name="Button16" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1169687550]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"OperatorButton"
+text = "+"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=97655145]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ZeroButtonContainer" type="Control" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=169341971]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ZeroButton" type="Button" parent="VBoxContainer/PanelContainer/GridContainer/ZeroButtonContainer" unique_id=1984867043]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+
+[node name="Button17" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=821320695]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "."
+
+[node name="Button18" type="Button" parent="VBoxContainer/PanelContainer/GridContainer" unique_id=1312176214]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"EqualsButton"
+text = "="
+
+[node name="HistoryPanel" type="Panel" parent="." unique_id=1557483566]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_top = 0.0
+offset_right = 1.0
+offset_bottom = 320.0
+script = ExtResource("3_uj8wn")
+
+[node name="HistoryTitle" type="Label" parent="HistoryPanel" unique_id=2026102023]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 12.0
+offset_right = 320.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 22
+text = "History"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HistoryPanel" unique_id=636870170]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 52.0
+offset_right = -16.0
+offset_bottom = -76.0
+
+[node name="Label" type="Label" parent="HistoryPanel/ScrollContainer" unique_id=1660676064]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = ""
+
+[node name="Button" type="Button" parent="HistoryPanel" unique_id=1741096142]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.0
+offset_top = -64.0
+offset_right = -6.0
+offset_bottom = -12.0
+theme_type_variation = &"UtilityButton"
+theme_override_font_sizes/font_size = 18
+text = "Clear"
+
+[node name="Button2" type="Button" parent="HistoryPanel" unique_id=1457475022]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -64.0
+offset_right = 154.0
+offset_bottom = -12.0
+theme_type_variation = &"UtilityButton"
+theme_override_font_sizes/font_size = 18
+text = "History"
+
+[connection signal="pressed" from="VBoxContainer/Header/ScientificToggleButton" to="." method="button_pressed" binds= ["SCIENTIFIC"]]
+[connection signal="pressed" from="VBoxContainer/Header/SettingsButton" to="." method="button_pressed" binds= ["SETTINGS"]]
+[connection signal="toggled" from="SettingsPanel/SettingsContent/DarkModeToggle" to="." method="_on_dark_mode_toggled"]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/SinButton" to="." method="button_pressed" binds= ["sin"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/CosButton" to="." method="button_pressed" binds= ["cos"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/TanButton" to="." method="button_pressed" binds= ["tan"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/SqrtButton" to="." method="button_pressed" binds= ["sqrt"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/AsinButton" to="." method="button_pressed" binds= ["asin"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/AcosButton" to="." method="button_pressed" binds= ["acos"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/AtanButton" to="." method="button_pressed" binds= ["atan"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/SquareButton" to="." method="button_pressed" binds= ["square"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/LnButton" to="." method="button_pressed" binds= ["ln"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/LogButton" to="." method="button_pressed" binds= ["log"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/ReciprocalButton" to="." method="button_pressed" binds= ["reciprocal"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/PowerButton" to="." method="button_pressed" binds= ["^"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/PiButton" to="." method="button_pressed" binds= ["π"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/EulerButton" to="." method="button_pressed" binds= ["e"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/AngleButton" to="." method="button_pressed" binds= ["DEG/RAD"]]
+[connection signal="pressed" from="VBoxContainer/ScientificGrid/AbsButton" to="." method="button_pressed" binds= ["abs"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button" to="." method="button_pressed" binds= ["C"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button2" to="." method="button_pressed" binds= ["+/-"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button3" to="." method="button_pressed" binds= ["%"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button4" to="." method="button_pressed" binds= ["/"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button5" to="." method="button_pressed" binds= ["7"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button6" to="." method="button_pressed" binds= ["8"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button7" to="." method="button_pressed" binds= ["9"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button8" to="." method="button_pressed" binds= ["x"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button9" to="." method="button_pressed" binds= ["4"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button10" to="." method="button_pressed" binds= ["5"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button11" to="." method="button_pressed" binds= ["6"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button12" to="." method="button_pressed" binds= ["-"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button13" to="." method="button_pressed" binds= ["1"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button14" to="." method="button_pressed" binds= ["2"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button15" to="." method="button_pressed" binds= ["3"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button16" to="." method="button_pressed" binds= ["+"]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/ZeroButtonContainer/ZeroButton" to="." method="button_pressed" binds= ["0"]]
+[connection signal="resized" from="VBoxContainer/PanelContainer/GridContainer/ZeroButtonContainer/ZeroButton" to="." method="_on_zero_button_resized"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button17" to="." method="button_pressed" binds= ["."]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/GridContainer/Button18" to="." method="button_pressed" binds= ["="]]
+[connection signal="pressed" from="HistoryPanel/Button" to="." method="button_pressed" binds= ["HC"]]
+[connection signal="pressed" from="HistoryPanel/Button2" to="HistoryPanel" method="_on_HistoryToggleButton_pressed"]

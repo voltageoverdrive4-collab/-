@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[node name="NoteItem" type="Button"]
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "Untitled note"
+alignment = 0
+autowrap_mode = 2

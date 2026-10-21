@@ -1,0 +1,195 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/notes.gd" id="1_notes"]
+[ext_resource type="PackedScene" path="res://scenes/note_item.tscn" id="2_note_item"]
+
+[node name="NotesApp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_notes")
+note_item_scene = ExtResource("2_note_item")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Page" type="VBoxContainer" parent="PageMargin"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Header" type="HBoxContainer" parent="PageMargin/Page"]
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Brand" type="VBoxContainer" parent="PageMargin/Page/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="AppTitle" type="Label" parent="PageMargin/Page/Header/Brand"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Notes"
+
+[node name="Subtitle" type="Label" parent="PageMargin/Page/Header/Brand"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "A quiet place for your thoughts"
+
+[node name="ThemeButton" type="Button" parent="PageMargin/Page/Header"]
+custom_minimum_size = Vector2(136, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Dark mode"
+
+[node name="NewNoteButton" type="Button" parent="PageMargin/Page/Header"]
+custom_minimum_size = Vector2(146, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "+  New note"
+
+[node name="Workspace" type="HSplitContainer" parent="PageMargin/Page"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offset = 280
+
+[node name="Sidebar" type="PanelContainer" parent="PageMargin/Page/Workspace"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SidebarContent" type="VBoxContainer" parent="PageMargin/Page/Workspace/Sidebar"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ListHeading" type="HBoxContainer" parent="PageMargin/Page/Workspace/Sidebar/SidebarContent"]
+layout_mode = 2
+
+[node name="ListTitle" type="Label" parent="PageMargin/Page/Workspace/Sidebar/SidebarContent/ListHeading"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Your notes"
+
+[node name="CountLabel" type="Label" parent="PageMargin/Page/Workspace/Sidebar/SidebarContent/ListHeading"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "0"
+
+[node name="SearchField" type="LineEdit" parent="PageMargin/Page/Workspace/Sidebar/SidebarContent"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+placeholder_text = "Search notes"
+clear_button_enabled = true
+
+[node name="NotesScroll" type="ScrollContainer" parent="PageMargin/Page/Workspace/Sidebar/SidebarContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 2
+
+[node name="NoteList" type="VBoxContainer" parent="PageMargin/Page/Workspace/Sidebar/SidebarContent/NotesScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="EmptyListLabel" type="Label" parent="PageMargin/Page/Workspace/Sidebar/SidebarContent/NotesScroll/NoteList"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "No notes yet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EditorCard" type="PanelContainer" parent="PageMargin/Page/Workspace"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Editor" type="VBoxContainer" parent="PageMargin/Page/Workspace/EditorCard"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="EditorToolbar" type="HBoxContainer" parent="PageMargin/Page/Workspace/EditorCard/Editor"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PinButton" type="Button" parent="PageMargin/Page/Workspace/EditorCard/Editor/EditorToolbar"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+text = "☆  Pin"
+
+[node name="StatusLabel" type="Label" parent="PageMargin/Page/Workspace/EditorCard/Editor/EditorToolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "Select a note"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DeleteButton" type="Button" parent="PageMargin/Page/Workspace/EditorCard/Editor/EditorToolbar"]
+custom_minimum_size = Vector2(84, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Delete"
+
+[node name="TitleField" type="LineEdit" parent="PageMargin/Page/Workspace/EditorCard/Editor"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+placeholder_text = "Untitled note"
+
+[node name="BodyField" type="TextEdit" parent="PageMargin/Page/Workspace/EditorCard/Editor"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 17
+placeholder_text = "Start writing..."
+wrap_mode = 1
+
+[node name="DeleteDialog" type="ConfirmationDialog" parent="."]
+title = "Delete note"
+dialog_text = "Delete this note? This cannot be undone."
+ok_button_text = "Delete"
+
+[node name="SaveTimer" type="Timer" parent="."]
+one_shot = true
+wait_time = 0.6
+
+[connection signal="pressed" from="PageMargin/Page/Header/ThemeButton" to="." method="_toggle_theme"]
+[connection signal="pressed" from="PageMargin/Page/Header/NewNoteButton" to="." method="_create_note"]
+[connection signal="text_changed" from="PageMargin/Page/Workspace/Sidebar/SidebarContent/SearchField" to="." method="_on_search_changed"]
+[connection signal="pressed" from="PageMargin/Page/Workspace/EditorCard/Editor/EditorToolbar/PinButton" to="." method="_toggle_pin"]
+[connection signal="pressed" from="PageMargin/Page/Workspace/EditorCard/Editor/EditorToolbar/DeleteButton" to="." method="_confirm_delete"]
+[connection signal="text_changed" from="PageMargin/Page/Workspace/EditorCard/Editor/TitleField" to="." method="_on_editor_changed"]
+[connection signal="text_changed" from="PageMargin/Page/Workspace/EditorCard/Editor/BodyField" to="." method="_on_editor_changed"]
+[connection signal="confirmed" from="DeleteDialog" to="." method="_delete_note"]
+[connection signal="timeout" from="SaveTimer" to="." method="_save_current_note"]
